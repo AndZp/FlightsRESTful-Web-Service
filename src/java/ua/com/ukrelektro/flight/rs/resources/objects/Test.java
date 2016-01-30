@@ -5,6 +5,8 @@
  */
 package ua.com.ukrelektro.flight.rs.resources.objects;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -27,13 +29,18 @@ public class Test {
     @XmlElement(name = "b")
     private boolean b;
     
+    @XmlElement(name = "innerTestList")
+    private List<InnerTest> innerTestList;
+    
     public Test(){ 
         i = 10; 
         s = "Hello, I`m from RESTful"; 
         b = true;
-                
-                
-                
+        innerTestList = new ArrayList<>();
+        innerTestList.add(new InnerTest());
+        innerTestList.add(new InnerTest());
+        innerTestList.add(new InnerTest());              
+        
     }
 
     public String getS() {
@@ -61,6 +68,13 @@ public class Test {
     public void setB(boolean b) {
         this.b = b;
     }
-          
+
+    public List<InnerTest> getInnerTest() {
+        return innerTestList;
+    }
+
+    public void setInnerTest(List<InnerTest> innerTest) {
+        this.innerTestList = innerTest;
+    }         
     
 }

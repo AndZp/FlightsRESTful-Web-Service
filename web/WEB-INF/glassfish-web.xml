@@ -6,5 +6,6 @@
     <property name="keepgenerated" value="true">
       <description>Keep a copy of the generated servlet class' java code.</description>
     </property>
+    <parameter-encoding default-charset="UTF-8"/>
   </jsp-config>
 </glassfish-web-app>
